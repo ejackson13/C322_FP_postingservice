@@ -1,4 +1,4 @@
-package edu.iu.c322.finalproject.postingservice;
+package iu.edu.c322.finalproject.postingservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

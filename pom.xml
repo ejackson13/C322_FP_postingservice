@@ -8,19 +8,15 @@
 		<version>3.0.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>edu.iu.c322.finalproject</groupId>
+	<groupId>iu.edu.c322.finalproject</groupId>
 	<artifactId>postingservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>postingservice</name>
-	<description>Posting service for C322 final project - Rental Application</description>
+	<description>posting service</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
