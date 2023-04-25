@@ -1,8 +1,9 @@
 package iu.edu.c322.finalproject.postingservice.controller;
 
-import iu.edu.c322.finalproject.postingservice.model.PostingInformation;
 import iu.edu.c322.finalproject.postingservice.model.SellerItem;
-import iu.edu.c322.finalproject.postingservice.repository.PostingRepository;
+import iu.edu.c322.finalproject.postingservice.repository.SellerItemRepository;
+import iu.edu.c322.finalproject.postingservice.repository.SellerRepository;
+import iu.edu.c322.finalproject.postingservice.repository.SellerShippingRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,20 +12,28 @@ import java.util.List;
 @RequestMapping("/list")
 public class PostingController {
 
-    private PostingRepository repository;
+    private SellerItemRepository repository;
 
-    public PostingController(PostingRepository repository) {
+    private SellerRepository sellerRepository;
+
+    private SellerShippingRepository sellerShippingRepository;
+
+    public PostingController(SellerItemRepository repository, SellerRepository sellerRepository, SellerShippingRepository sellerShippingRepository) {
+        this.sellerShippingRepository = sellerShippingRepository;
+        this.sellerRepository = sellerRepository;
         this.repository = repository;
     }
 
     @GetMapping
-    public List<PostingInformation> findAll() {
+    public List<SellerItem> findAll() {
         return repository.findAll();
     }
 
     @PostMapping
-    public void create(@RequestBody PostingInformation postingInformation) {
-        PostingInformation addedPostingInformation = repository.save(postingInformation);
+    public void create(@RequestBody SellerItem sellerItem) {
+        sellerShippingRepository.save(sellerItem.getSeller().getSellerShipping());
+        sellerRepository.save(sellerItem.getSeller());
+        repository.save(sellerItem);
     }
 
 }

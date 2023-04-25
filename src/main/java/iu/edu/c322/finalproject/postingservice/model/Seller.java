@@ -1,28 +1,22 @@
 package iu.edu.c322.finalproject.postingservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Seller {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int sellerId;
-
-    // private int itemId ?
 
     private String venmoId;
 
-    private int sellerShippingId;
+    @OneToOne
+    @JoinColumn(name = "shippingId")
+    private SellerShipping sellerShipping;
 
     private String sellerName;
 
     private String sellerEmail;
-
-    // feedbackseller ?
 
     public int getSellerId() {
         return sellerId;
@@ -32,12 +26,12 @@ public class Seller {
         this.sellerId = sellerId;
     }
 
-    public int getSellerShippingId() {
-        return sellerShippingId;
+    public SellerShipping getSellerShipping() {
+        return sellerShipping;
     }
 
-    public void setSellerShippingId(int sellerShippingId) {
-        this.sellerShippingId = sellerShippingId;
+    public void setSellerShipping(SellerShipping sellerShipping) {
+        this.sellerShipping = sellerShipping;
     }
 
     public String getSellerName() {

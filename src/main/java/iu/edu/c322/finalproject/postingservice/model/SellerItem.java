@@ -1,10 +1,7 @@
 package iu.edu.c322.finalproject.postingservice.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class SellerItem {
@@ -13,7 +10,9 @@ public class SellerItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int itemId;
 
-    private int sellerId;
+    @ManyToOne
+    @JoinColumn(name = "sellerId")
+    private Seller seller;
 
     private String name;
 
@@ -31,12 +30,12 @@ public class SellerItem {
         this.itemId = itemId;
     }
 
-    public int getSellerId() {
-        return sellerId;
+    public Seller getSeller() {
+        return seller;
     }
 
-    public void setSellerId(int sellerId) {
-        this.sellerId = sellerId;
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 
     public String getName() {
