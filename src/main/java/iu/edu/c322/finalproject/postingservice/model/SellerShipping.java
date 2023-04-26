@@ -49,4 +49,5 @@ public class SellerShipping {
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+
 }

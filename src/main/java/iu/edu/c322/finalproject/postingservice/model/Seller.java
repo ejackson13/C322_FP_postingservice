@@ -11,12 +11,16 @@ public class Seller {
     private String venmoId;
 
     @OneToOne
-    @JoinColumn(name = "shippingId")
+    @JoinColumn(name = "sellerShipping_id")
     private SellerShipping sellerShipping;
 
     private String sellerName;
 
     private String sellerEmail;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "feedbackSeller_id")
+    private FeedbackSeller feedbackSeller;
 
     public int getSellerId() {
         return sellerId;
@@ -56,5 +60,13 @@ public class Seller {
 
     public void setVenmoId(String venmoId) {
         this.venmoId = venmoId;
+    }
+
+    public FeedbackSeller getFeedbackSeller() {
+        return feedbackSeller;
+    }
+
+    public void setFeedbackSeller(FeedbackSeller feedbackSeller) {
+        this.feedbackSeller = feedbackSeller;
     }
 }

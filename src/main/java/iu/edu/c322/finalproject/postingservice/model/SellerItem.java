@@ -11,7 +11,7 @@ public class SellerItem {
     private int itemId;
 
     @ManyToOne
-    @JoinColumn(name = "sellerId")
+    @JoinColumn(name = "seller_id")
     private Seller seller;
 
     private String name;
@@ -69,4 +69,5 @@ public class SellerItem {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }
