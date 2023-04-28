@@ -1,5 +1,6 @@
 package iu.edu.c322.finalproject.postingservice.controller;
 
+import iu.edu.c322.finalproject.postingservice.model.FeedbackSeller;
 import iu.edu.c322.finalproject.postingservice.model.SellerItem;
 import iu.edu.c322.finalproject.postingservice.repository.SellerItemRepository;
 import iu.edu.c322.finalproject.postingservice.repository.SellerRepository;
@@ -26,6 +27,7 @@ public class PostingController {
 
     @GetMapping
     public List<SellerItem> findAll() {
+
         return repository.findAll();
     }
 

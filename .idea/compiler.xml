@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="postingservice" />
+        <module name="c322_fp_postingservice" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="c322_fp_postingservice" options="-parameters" />
       <module name="postingservice" options="-parameters" />
     </option>
   </component>
