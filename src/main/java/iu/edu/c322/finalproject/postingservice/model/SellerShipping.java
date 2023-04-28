@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 public class SellerShipping {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String street;
