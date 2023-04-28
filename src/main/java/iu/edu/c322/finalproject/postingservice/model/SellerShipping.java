@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 public class SellerShipping {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String street;
@@ -50,12 +49,11 @@ public class SellerShipping {
         this.city = city;
     }
 
-    public int getZipCode() {
+    public int getPostalCode() {
         return postalCode;
     }
 
-    public void setZipCode(int postalCode) {
+    public void setPostalCode(int postalCode) {
         this.postalCode = postalCode;
     }
-
 }
