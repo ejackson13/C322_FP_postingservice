@@ -25,14 +25,14 @@ public class PostingController {
         this.repository = repository;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @GetMapping
     public List<SellerItem> findAll() {
 
         return repository.findAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin()
     @PostMapping
     public void create(@RequestBody SellerItem sellerItem) {
         sellerShippingRepository.save(sellerItem.getSeller().getSellerShipping());
